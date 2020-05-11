@@ -10,11 +10,7 @@ const addTaskToDB = (request) => {
 
   users.map((user) => {
     if (user.id === request.id) {
-      user.toDoList.push({
-        id: shortid.generate(),
-        completed: false,
-        ...request.task,
-      });
+      user.toDoList = [...request.tasks];
       return user;
     }
     return user;
