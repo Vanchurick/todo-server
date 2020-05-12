@@ -1,3 +1,8 @@
 const startServer = require("./src/server");
 
-startServer(5050);
+let port = process.env.PORT;
+if (port == null || port == "") {
+  port = 5050;
+}
+
+startServer(port);
